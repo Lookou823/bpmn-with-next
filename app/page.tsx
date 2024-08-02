@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import Link from "next/link";
 import { Button, Timeline } from "antd";
@@ -12,7 +13,7 @@ export default function Home() {
           alt="next-admin"
           width={144}
           height={144}
-          style={{ borderRadius: 9999 }}
+          className={styles.borderCircle}
           priority
         />
 
@@ -21,19 +22,27 @@ export default function Home() {
         <section className={styles.headingMd}>
           <p>
             Hello, I'm <strong>Liu</strong>. I'm a front-end engineer . You can
-            contact me on <a href="https://github.com/Lookou823">Github</a>.
+            contact me on{" "}
+            <Button style={{ padding: 0, fontSize: `1.2rem` }} type="link">
+              <a href="https://github.com/Lookou823">Github</a>
+            </Button>
+            .
           </p>
           <p>(This is a sample website - contains the demos of my projects.)</p>
         </section>
 
         <div className={styles.timeBox}>
           <Timeline
+            style={{ width: "100%", marginTop: 20 }}
             items={[
               {
                 children: "bpmn.js",
               },
               {
                 children: "charts",
+              },
+              {
+                children: "UI components based on Bit.Dev",
               },
               {
                 children: "virtual list",
@@ -44,10 +53,10 @@ export default function Home() {
             ]}
           />
         </div>
+        <Link href="/bpm" style={{ marginRight: 20 }}>
+          <Button type="primary">Try it</Button>
+        </Link>
       </div>
-      <Link href="/home" style={{ marginRight: 20 }}>
-        <Button type="primary">try it</Button>
-      </Link>
     </main>
   );
 }
