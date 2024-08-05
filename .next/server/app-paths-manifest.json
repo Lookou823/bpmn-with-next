@@ -1,6 +1,6 @@
 {
   "/page": "app/page.js",
+  "/default-bpm/page": "app/default-bpm/page.js",
   "/bpm/page": "app/bpm/page.js",
-  "/charts/page": "app/charts/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js"
 }

@@ -27,18 +27,26 @@ const keyMap: { [x: string]: string } = {
   "1": "/bpm",
   "2": "/charts",
   "3": "/funs",
+  "4": "/default-bpm",
+};
+const keyName: { [x: string]: string } = {
+  "1": "自定义工作流",
+  "2": "图表",
+  "3": "小工具",
+  "4": "默认工作流",
 };
 const items2: MenuProps["items"] = [
   UserOutlined,
   LaptopOutlined,
   NotificationOutlined,
+  UserOutlined,
 ].map((icon, index) => {
   const key = String(index + 1);
 
   return {
     key: `${keyMap[key]}`,
     icon: React.createElement(icon),
-    label: `subnav ${key}`,
+    label: `${keyName[key]}`,
 
     // children: new Array(4).fill(null).map((_, j) => {
     //   const subKey = index * 4 + j + 1;

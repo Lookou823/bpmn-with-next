@@ -536,6 +536,9 @@ video {
 .static {
   position: static;
 }
+.absolute {
+  position: absolute;
+}
 .inline {
   display: inline;
 }
