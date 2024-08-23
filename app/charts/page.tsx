@@ -11,5 +11,5 @@ export default function Charts() {
       console.log("chartssssssssss");
     }
   }, []);
-  return <CommonLayout curActive="/bpm">charts</CommonLayout>;
+  return <CommonLayout curActive="/charts">charts</CommonLayout>;
 }

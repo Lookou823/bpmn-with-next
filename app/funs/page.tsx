@@ -1,6 +1,12 @@
+"use client";
 import Image from "next/image";
 import CommonLayout from "@/components/Layout";
-import BpmEditor from "@/components/Bpm/BpmEditor";
-export default function Bpm() {
-  return <CommonLayout curActive="/bpm">funs</CommonLayout>;
+
+import DragAndDropExample from "@/components/Tools/DragComponent";
+export default function Funs() {
+  return (
+    <CommonLayout curActive="/funs">
+      <DragAndDropExample />
+    </CommonLayout>
+  );
 }
