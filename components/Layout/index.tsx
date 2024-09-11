@@ -7,6 +7,7 @@ import {
   NotificationOutlined,
   UserOutlined,
   GithubOutlined,
+  CalculatorOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Breadcrumb, Layout, Menu, theme, ConfigProvider } from "antd";
@@ -19,7 +20,7 @@ interface IProps {
   defaultOpen?: string[];
 }
 
-const items1: MenuProps["items"] = ["1", "2", "3"].map((key) => ({
+const items1: MenuProps["items"] = ["1", "2", "3", "4", "5"].map((key) => ({
   key,
   label: `nav ${key}`,
 }));
@@ -28,18 +29,21 @@ const keyMap: { [x: string]: string } = {
   "2": "/charts",
   "3": "/funs",
   "4": "/default-bpm",
+  "5": "/html-demo",
 };
 const keyName: { [x: string]: string } = {
   "1": "自定义工作流",
   "2": "图表",
   "3": "小工具",
   "4": "默认工作流",
+  "5": "原生html例子",
 };
 const items2: MenuProps["items"] = [
   UserOutlined,
   LaptopOutlined,
   NotificationOutlined,
   UserOutlined,
+  CalculatorOutlined,
 ].map((icon, index) => {
   const key = String(index + 1);
 
@@ -120,7 +124,7 @@ const CommonLayout: React.FC<IProps> = ({
             <Menu
               mode="inline"
               defaultSelectedKeys={["1"]}
-              defaultOpenKeys={["sub1"]}
+              // defaultOpenKeys={["sub1"]}
               style={{ height: "100%", borderRight: 0 }}
               items={items2}
               onSelect={handleSelect}

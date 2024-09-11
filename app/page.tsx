@@ -1,9 +1,10 @@
+"use client";
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import Link from "next/link";
 import { Button, Timeline } from "antd";
 import styles from "./page.module.css";
-
+import WaterMark from "@/components/Watermark";
 export default function Home() {
   return (
     <main className={styles.home}>
@@ -57,6 +58,7 @@ export default function Home() {
           <Button type="primary">Try it</Button>
         </Link>
       </div>
+      <WaterMark text="海石" />
     </main>
   );
 }

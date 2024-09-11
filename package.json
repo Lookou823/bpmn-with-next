@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@alex_xu/react-slider-vertify": "^1.2.0",
     "@ant-design/icons": "5.4.0",
     "@ant-design/nextjs-registry": "^1.0.0",
     "antd": "5.19.4",
@@ -21,7 +22,8 @@
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18",
-    "react-intl": "^6.6.8"
+    "react-intl": "^6.6.8",
+    "react-notifications": "^1.7.4"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.7",

@@ -539,11 +539,20 @@ video {
 .absolute {
   position: absolute;
 }
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
 .inline {
   display: inline;
 }
 .flex {
   display: flex;
+}
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .border {
   border-width: 1px;
