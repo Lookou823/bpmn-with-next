@@ -17,6 +17,12 @@
       "static/chunks/main-app.js",
       "static/css/app/bpm/page.css",
       "static/chunks/app/bpm/page.js"
+    ],
+    "/funs/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/funs/page.css",
+      "static/chunks/app/funs/page.js"
     ]
   }
 }

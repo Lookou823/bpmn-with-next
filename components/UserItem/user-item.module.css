@@ -1,0 +1,46 @@
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 1.95rem 2.17rem;
+  overflow: hidden;
+  width: 700px;
+  border: solid 1px #cfd2d6;
+  border-radius: 8px;
+}
+.info-box {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.jj-avatar {
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+  margin-right: 1.67rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+}
+
+.jj-avatar,
+.jj-avatar [data-v-03256cc6] {
+  box-sizing: border-box;
+}
+
+.jj-avatar .avatar-img {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  background-color: #f7f8fa;
+}
+
+.follow-btn {
+  flex: 0 0 auto;
+  margin: 0 0 0 1rem;
+  padding: 0;
+  width: 6.17rem;
+  height: 2.5rem;
+  font-size: 1.1rem;
+  background-color: #fff;
+}

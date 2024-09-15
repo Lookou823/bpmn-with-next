@@ -12,6 +12,7 @@
     "@alex_xu/react-slider-vertify": "^1.2.0",
     "@ant-design/icons": "5.4.0",
     "@ant-design/nextjs-registry": "^1.0.0",
+    "ahooks": "^3.8.1",
     "antd": "5.19.4",
     "bpmn-js": "^17.9.1",
     "bpmn-js-properties-panel": "^5.21.0",

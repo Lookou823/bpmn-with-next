@@ -3,12 +3,18 @@ import Image from "next/image";
 import CommonLayout from "@/components/Layout";
 import NotificationComponent from "@/components/Tools/NotificationComponent";
 import DragAndDropExample from "@/components/Tools/DragComponent";
-import { Space, Card } from "antd";
+import { Space, Card, Button } from "antd";
 import React, { useState } from "react";
 import { Vertify } from "@alex_xu/react-slider-vertify";
+import DeviceList from "@/components/TableExample";
+import DeviceCopyList from "@/components/TableExampleTwo";
+import ModalButton from "@/components/ModalComponent";
+
+import UserItem from "@/components/UserItem";
 
 export default function Funs() {
   const [visible, setVisible] = useState(false);
+  const [tableType, setTableType] = useState(false);
   const show = () => {
     setVisible(true);
   };
@@ -35,7 +41,6 @@ export default function Funs() {
         <Card title="桌面通知组件">
           <NotificationComponent />
         </Card>
-
         <Card title="滑块验证组件">
           <>
             <div onClick={show} style={style}>
@@ -53,6 +58,37 @@ export default function Funs() {
               onRefresh={() => alert("refresh")}
             />
           </>
+        </Card>
+        <Button
+          onClick={() => {
+            setTableType(!tableType);
+          }}
+        >
+          切换表格
+        </Button>
+        <>
+          {tableType ? (
+            <Card title="表格示例1">
+              <DeviceList />
+            </Card>
+          ) : (
+            <Card title="表格示例2">
+              <DeviceCopyList />
+            </Card>
+          )}
+        </>
+
+        <Card title="弹窗组件">
+          <ModalButton />
+        </Card>
+        <Card title="用户信息">
+          <UserItem
+            userId="823"
+            info={{
+              detail: "100 文章 · 100沸点 · 100关注者",
+              followStatus: false,
+            }}
+          />
         </Card>
       </Space>
     </CommonLayout>
