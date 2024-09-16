@@ -11,7 +11,7 @@ import DeviceCopyList from "@/components/TableExampleTwo";
 import ModalButton from "@/components/ModalComponent";
 
 import UserItem from "@/components/UserItem";
-
+import ToggleComponent from "@/components/ToggleComponent";
 export default function Funs() {
   const [visible, setVisible] = useState(false);
   const [tableType, setTableType] = useState(false);
@@ -89,6 +89,10 @@ export default function Funs() {
               followStatus: false,
             }}
           />
+        </Card>
+
+        <Card title="测试useToggle">
+          <ToggleComponent />
         </Card>
       </Space>
     </CommonLayout>

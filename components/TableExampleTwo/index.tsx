@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table, Input, Button, Typography, Space } from "antd";
 import { useSetState } from "ahooks";
 import { debounce } from "lodash";
+import useToggle from "./usehook";
 const mockData = Array.from({ length: 100 }, (_, index) => ({
   key: `${index}`,
   name: `设备${index + 1}`,
@@ -37,18 +38,12 @@ type Pagination = {
 };
 
 const DeviceCopyList: React.FC = () => {
-
-
-  
   const setPaginationState: SetState<Pagination> = (state) => {
     console.log(`Current Pagination state: ${state}`);
   };
   setPaginationState({ total: 1, pageNum: 1 });
 
   setPaginationState({ gender: "male" });
-
-
-
 
   const logUserInfo = (info: Pick<UserDetail, "name">) => {
     console.log(`Current User info: ${info}`);
@@ -100,6 +95,9 @@ const DeviceCopyList: React.FC = () => {
   setTodosState(todos);
   const [data, setData] = useState<Device[]>([]);
   const [loading, setLoading] = useState(false);
+
+  const [toggle_state, { set }] = useToggle<string>();
+
   const [searchText, setSearchText] = useState<string>("");
   const [pagination, setPagination] = useSetState({
     pageNum: 1,

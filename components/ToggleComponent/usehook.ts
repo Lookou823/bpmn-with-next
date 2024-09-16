@@ -54,8 +54,8 @@ function useToggle<D, R>(defaultValue: D = false as unknown as D , reverseValue?
       setRight,
     };
     // useToggle ignore value change
-    // }, [defaultValue, reverseValue]);
-  }, []);
+    }, [defaultValue, reverseValue]);
+  // }, []);
 
   return [state, actions];
 }
