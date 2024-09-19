@@ -1,4 +1,5 @@
 {
-  "/funs/page": "app/funs/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/page": "app/page.js",
+  "/bpm/page": "app/bpm/page.js",
+  "/default-bpm/page": "app/default-bpm/page.js"
 }
