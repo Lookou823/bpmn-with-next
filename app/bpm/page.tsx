@@ -5,7 +5,8 @@ import BpmEditor from "@/components/Bpm/BpmEditor";
 export default function Bpm() {
   return (
     <CommonLayout curActive="/bpm">
-      <BpmEditor />
+      {/* <BpmEditor /> */}
+      <>暂时空白</>
     </CommonLayout>
   );
 }

@@ -1,0 +1,5 @@
+.export-btn {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 180px);
+}

@@ -15,12 +15,12 @@
     "/bpm/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/bpm/page.css",
       "static/chunks/app/bpm/page.js"
     ],
     "/default-bpm/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
+      "static/css/app/default-bpm/page.css",
       "static/chunks/app/default-bpm/page.js"
     ]
   }
