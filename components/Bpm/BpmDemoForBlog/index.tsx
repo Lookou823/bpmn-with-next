@@ -50,6 +50,8 @@ const BpmDemo = () => {
   const [bpmnModeler, setBpmnModeler] = useState<any | null>(null);
 
   console.log("123");
+  console.log("123");
+  console.log("123");
 
   useEffect(() => {
     setBpmnModeler(new Modeler({ container: "#canvas" }));
