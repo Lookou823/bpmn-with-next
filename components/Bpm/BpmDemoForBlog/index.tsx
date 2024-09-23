@@ -49,6 +49,8 @@ const bpmnXMLString = `<?xml version="1.0" encoding="UTF-8"?>
 const BpmDemo = () => {
   const [bpmnModeler, setBpmnModeler] = useState<any | null>(null);
 
+  console.log("123");
+
   useEffect(() => {
     setBpmnModeler(new Modeler({ container: "#canvas" }));
     return () => {
