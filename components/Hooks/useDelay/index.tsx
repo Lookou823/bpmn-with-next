@@ -19,16 +19,21 @@ const useDelay = (
           // 如果有等待的延迟，取消它
           clearTimeout(timeoutIdRef.current);
         }
+        // 设置新的延迟
+        timeoutIdRef.current = window.setTimeout(() => {
+          // 没有设置立即执行，则不执行
+          !invokeNow && setState(!!nextState);
+          timeoutIdRef.current = null; // 延迟完成后，清除引用
+        }, delay);
+
         if (invokeNow) {
+          console.log("nextState", nextState);
+
           setState(!!nextState);
-        } else {
-          // 设置新的延迟
-          timeoutIdRef.current = window.setTimeout(() => {
-            setState(!!nextState);
-            timeoutIdRef.current = null; // 延迟完成后，清除引用
-          }, delay);
         }
       } else {
+        console.log("false-nextState", nextState);
+
         setState(!!nextState);
       }
     },

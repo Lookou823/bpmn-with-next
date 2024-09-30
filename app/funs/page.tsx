@@ -25,7 +25,7 @@ import useDelay from "@/components/Hooks/useDelay";
 export default function Funs() {
   const [visible, setVisible] = useState(false);
   const [tableType, setTableType] = useState(false);
-  const [loading, setLoading] = useDelay(false, 3000, true);
+  const [loading, setLoading] = useDelay(false, 500, true);
   const [cardLoading, setCardLoading] = useDelay(false, 2000, true);
   const [alarms, setAlarms] = useState<any[]>([]);
   const [flag, setFlag] = useState(false);
@@ -33,6 +33,7 @@ export default function Funs() {
 
   useEffect(() => {
     let socket: any | null = null;
+    console.log("flag", flag);
     if (flag) {
       socket = io("ws://localhost:8080");
       // socket.on("ping", () => {
@@ -47,11 +48,12 @@ export default function Funs() {
         setLoading(true);
         // 延迟更新数据，模拟异步操作
         setTimeout(() => {
-          // 将新的告警添加到列表中
-          setAlarms((currentAlarms) => [...currentAlarms, alarm]);
           // 设置加载状态为false
           setLoading(false);
-        }, 10000); // 延迟1秒
+        }, 800); // 延迟1秒
+
+        // 将新的告警添加到列表中
+        setAlarms((currentAlarms) => [...currentAlarms, alarm]);
       });
       socket.on("disconnect", () => {
         console.log("server disconnected");
@@ -69,6 +71,8 @@ export default function Funs() {
     return () => {
       if (socket) {
         socket.disconnect();
+        setLoading(false);
+        setAlarms([]);
       }
     };
   }, [flag]);
