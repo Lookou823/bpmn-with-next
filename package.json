@@ -24,7 +24,8 @@
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18",
     "react-intl": "^6.6.8",
-    "react-notifications": "^1.7.4"
+    "react-notifications": "^1.7.4",
+    "socket.io-client": "^4.8.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.7",

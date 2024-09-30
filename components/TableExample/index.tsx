@@ -60,7 +60,6 @@ const DeviceList: React.FC = () => {
           ? mockData.filter((device) => device.name.includes(searchText))
           : mockData;
         const paginatedData = filteredData.slice(startIndex, endIndex);
-        console.log("paginatedData", paginatedData);
         resolve({ data: paginatedData, total: filteredData.length });
       }, 1000);
     });
@@ -140,5 +139,4 @@ export default DeviceList;
 // const car: Car = {};
 let state = "";
 if (state === true) {
-  console.log("success");
 }

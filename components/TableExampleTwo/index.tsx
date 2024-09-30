@@ -38,30 +38,22 @@ type Pagination = {
 };
 
 const DeviceCopyList: React.FC = () => {
-  const setPaginationState: SetState<Pagination> = (state) => {
-    console.log(`Current Pagination state: ${state}`);
-  };
+  const setPaginationState: SetState<Pagination> = (state) => {};
   setPaginationState({ total: 1, pageNum: 1 });
 
   setPaginationState({ gender: "male" });
 
-  const logUserInfo = (info: Pick<UserDetail, "name">) => {
-    console.log(`Current User info: ${info}`);
-  };
+  const logUserInfo = (info: Pick<UserDetail, "name">) => {};
 
   logUserInfo({ name: "123" });
 
   const testFun: TestFun = (param) => param + 1;
   // 处理字符串类型的状态
-  const setStringState: SetState<string> = (state) => {
-    console.log(`Current string state: ${state}`);
-  };
+  const setStringState: SetState<string> = (state) => {};
 
   setStringState("Hello");
   // 处理数字类型的状态
-  const setNumberState: SetState<number> = (state) => {
-    console.log(`Current number state: ${state}`);
-  };
+  const setNumberState: SetState<number> = (state) => {};
 
   setNumberState(42);
 
@@ -71,9 +63,7 @@ const DeviceCopyList: React.FC = () => {
     age: number;
   }
 
-  const setPersonState: SetState<Person> = (state) => {
-    console.log(`Current person state: Name: ${state.name}, Age:${state.age}`);
-  };
+  const setPersonState: SetState<Person> = (state) => {};
 
   const person: Person = { name: "Bob", age: 25 };
   setPersonState(person);
@@ -84,9 +74,7 @@ const DeviceCopyList: React.FC = () => {
     text: string;
   };
 
-  const setTodosState: SetState<Todo[]> = (state) => {
-    console.log(`Current todos state:`, state);
-  };
+  const setTodosState: SetState<Todo[]> = (state) => {};
 
   const todos: Todo[] = [
     { id: 1, text: "Learn TypeScript" },

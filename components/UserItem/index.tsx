@@ -33,8 +33,6 @@ const myName = "海石";
 const afterName = getPrefix(myName);
 const afterName2 = getPrefix(123);
 
-console.log("afterName", afterName);
-
 function getSum(num1: number): number;
 function getSum(num1: number, num2: number): number;
 function getSum(num1: number, num2: number, num3: number): number;
@@ -50,10 +48,6 @@ const sum1 = getSum(1);
 const sum2 = getSum(1, 2);
 const sum3 = getSum(1, 2, 3);
 // const sum4 = getSum(1,2,3,4)
-console.log(sum1);
-console.log(sum2);
-console.log(sum3);
-
 function getSumByRestOperator(...nums: number[]) {
   return nums.reduce((pre, cur) => pre + cur, 0);
 }
@@ -61,10 +55,6 @@ function getSumByRestOperator(...nums: number[]) {
 const sum1_other = getSumByRestOperator(1);
 const sum2_other = getSumByRestOperator(1, 2);
 const sum3_other = getSumByRestOperator(1, 2, 3);
-console.log("sum1_other: ", sum1_other);
-console.log("sum2_other: ", sum2_other);
-console.log("sum3_other: ", sum3_other);
-
 const sum4 = getSum(1, 2, 3, 4);
 
 const sum4_other = getSumByRestOperator(1, 2, 3, 4);
@@ -157,4 +147,4 @@ export default UserItem;
 // const arr3 = minimumLength([1, 2, 3], 6);
 // // and crashes here because arrays have
 // // a 'slice' method, but not the returned object!
-// console.log(arr3.slice(0));
+// );

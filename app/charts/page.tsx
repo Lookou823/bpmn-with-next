@@ -8,7 +8,6 @@ export default function Charts() {
     if (typeof window !== "undefined") {
       // window 对象存在，因此我们处于客户端
       // 在这里执行你的副作用代码
-      console.log("chartssssssssss");
     }
   }, []);
   return <CommonLayout curActive="/charts">charts</CommonLayout>;

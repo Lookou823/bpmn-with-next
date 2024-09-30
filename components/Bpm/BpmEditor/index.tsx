@@ -68,7 +68,6 @@ function BpmEditor({ code }: BpmEditorProps) {
   // const history = useHistory();
   useEffect(() => {
     if (!bpmnModeler && !renderFlag.current) {
-      console.log("挂载一次");
       renderFlag.current = true;
       initBpmn();
     }
