@@ -1,0 +1,9 @@
+{
+  "menu": {
+    "bpm": "自定义工具流",
+    "charts": "图表",
+    "funs": "小工具",
+    "default-bpm": "默认工作流",
+    "html-demo": "原生html例子"
+  }
+}

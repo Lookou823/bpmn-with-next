@@ -1,16 +1,43 @@
 {
   "pages": {
-    "/funs/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/funs/page.css",
-      "static/chunks/app/funs/page.js"
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
+    ],
+    "/bpm/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/bpm/page.js"
+    ],
+    "/charts/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/charts/page.js"
+    ],
+    "/funs/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/funs/page.css",
+      "static/chunks/app/funs/page.js"
+    ],
+    "/default-bpm/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/default-bpm/page.css",
+      "static/chunks/app/default-bpm/page.js"
+    ],
+    "/html-demo/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/html-demo/page.js"
     ]
   }
 }

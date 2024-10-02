@@ -1,4 +1,8 @@
 {
+  "/bpm/page": "app/bpm/page.js",
+  "/charts/page": "app/charts/page.js",
   "/funs/page": "app/funs/page.js",
+  "/default-bpm/page": "app/default-bpm/page.js",
+  "/html-demo/page": "app/html-demo/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js"
 }

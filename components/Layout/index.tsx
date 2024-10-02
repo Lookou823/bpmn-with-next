@@ -1,6 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
+import { usePathname, useSearchParams } from "next/navigation";
+import { initializeI18n } from "@/components/Locales";
 
 import {
   LaptopOutlined,
@@ -10,7 +13,16 @@ import {
   CalculatorOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Breadcrumb, Layout, Menu, theme, ConfigProvider } from "antd";
+import {
+  Breadcrumb,
+  Layout,
+  Menu,
+  theme,
+  ConfigProvider,
+  Space,
+  Button,
+  Radio,
+} from "antd";
 import { getThemeBg } from "@/utils";
 
 const { Header, Content, Sider, Footer } = Layout;
@@ -51,21 +63,6 @@ const items2: MenuProps["items"] = [
     key: `${keyMap[key]}`,
     icon: React.createElement(icon),
     label: `${keyName[key]}`,
-
-    // children: new Array(4).fill(null).map((_, j) => {
-    //   const subKey = index * 4 + j + 1;
-    //   if (index === 0) {
-    //     return {
-    //       key: "/bpm",
-    //       label: `option${subKey}`,
-    //     };
-    //   } else {
-    //     return {
-    //       key: "/charts",
-    //       label: `option${subKey}`,
-    //     };
-    //   }
-    // }),
   };
 });
 
@@ -74,10 +71,18 @@ const CommonLayout: React.FC<IProps> = ({
   curActive,
   defaultOpen = ["/"],
 }) => {
+  const { t, i18n } = useTranslation();
+  console.log("i18n", i18n);
+
+  console.log("tttttt", t());
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
   const [curTheme, setCurTheme] = useState<boolean>(false);
+  const pathname = usePathname();
+  console.log("pathname", pathname);
+  const [current, setCurrent] = useState(pathname);
+
   const toggleTheme = () => {
     const _curTheme = !curTheme;
     setCurTheme(_curTheme);
@@ -85,11 +90,19 @@ const CommonLayout: React.FC<IProps> = ({
   };
   const router = useRouter();
   const handleSelect = (row: { key: string }) => {
+    console.log("row.key", row.key);
     router.push(row.key);
+    setCurrent(row.key);
   };
   // const handleSelect = (row: { key: string }) => {
   //   router.push(row.key);
   // };
+
+  const menu_items = () =>
+    items2.map((item) => ({
+      ...item,
+      label: t("menu." + String(item!.key).slice(1), { defaultValue: "nmsl" }),
+    }));
 
   useEffect(() => {
     const isDark = !!localStorage.getItem("isDarkTheme");
@@ -106,6 +119,7 @@ const CommonLayout: React.FC<IProps> = ({
           style={{
             display: "flex",
             alignItems: "center",
+            justifyContent: "space-between",
             // padding: 0,
             ...getThemeBg(curTheme),
           }}
@@ -117,17 +131,36 @@ const CommonLayout: React.FC<IProps> = ({
           defaultSelectedKeys={["2"]}
           items={items1}
           style={{ flex: 1, minWidth: 0 }}
+          
         /> */}
+          <Radio.Group defaultValue="zh" size="large">
+            <Radio.Button
+              value={"zh"}
+              onClick={() => {
+                i18n.changeLanguage("zh");
+              }}
+            >
+              中
+            </Radio.Button>
+            <Radio.Button
+              value={"en"}
+              onClick={() => {
+                i18n.changeLanguage("en");
+              }}
+            >
+              En
+            </Radio.Button>
+          </Radio.Group>
         </Header>
         <Layout>
           <Sider width={200} style={{ background: colorBgContainer }}>
             <Menu
               mode="inline"
-              defaultSelectedKeys={["1"]}
               // defaultOpenKeys={["sub1"]}
+              selectedKeys={[current]}
               style={{ height: "100%", borderRight: 0 }}
-              items={items2}
-              onSelect={handleSelect}
+              items={menu_items()}
+              onClick={handleSelect}
             />
           </Sider>
           <Layout style={{ padding: "0 24px 24px" }}>
